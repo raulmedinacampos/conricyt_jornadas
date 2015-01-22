@@ -3,6 +3,7 @@ class Reporte extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model("reporte_model", "reporte", TRUE);
+		$this->load->helper("form");
 	}
 	
 	public function index() {
