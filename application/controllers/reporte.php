@@ -9,8 +9,10 @@ class Reporte extends CI_Controller {
 	}
 	
 	public function por_sede() {
+		$data['total'] = $this->reporte->getTotalUsers();
+		
 		$this->load->view("header");
-		$this->load->view("reportes/sede");
+		$this->load->view("reportes/sede", $data);
 		$this->load->view("footer");
 	}
 }
