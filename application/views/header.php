@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav">
         <!--<li  style=" border-left:white 1px solid;"><a href="#">Registro</a></li>-->
         <li><a href="<?php echo base_url('jornadas'); ?>">Jornadas</a></li>
-        <li><a href="<?php echo base_url('carta-invitacion'); ?>">Carta invitación</a></li>
+        <li><a href="<?php echo base_url('registro'); ?>">Registro</a></li>
         <li><a href="http://www.conricyt.mx/" target="_blank">CONRICYT</a></li>
         <!--<li ><a href="#">Constancia</a></li>-->
       </ul>
