@@ -119,6 +119,7 @@
 			$html .= '<p class="remitente">ESTIMADO(A) '.$nombre_completo.'<br />'.$institucion.'<br />P r e s e n t e:</p>';
 			$html .= '<p>Tu inscripción a las Jornadas de Capacitación CONRICYT 2015 se ha completado con éxito. Durante las Capacitaciones deberás ingresar al correo con el que te registraste para tener acceso a las evaluaciones.</p>';
 			$html .= '<p>Es necesario que realices las evaluaciones de las capacitaciones a las que asististe para obtener tu constancia de asistencia, la cual podrás descargar hasta el 31 de diciembre del presente año en el sitio web de las Jornadas de Capacitación.</p>';
+			$html .= '<p>Recuerda llevar tu computadora o tableta electrónica.</p>';
 			$html .= '<h4>http://jornadascapacitacion.conricyt.mx/</h4>';
 			$html .= '<p><strong>Sede: '.utf8_decode($evento->evento).'</strong></p>';
 			$html .= '<p><strong>Capacitaciones seleccionadas:</strong></p>';
@@ -342,6 +343,7 @@
 			$body .= '<br /><br /><p><font size="3" face="Arial" color="#006699"><strong>&iexcl;Hola, '.$remitente.'!</strong></font></p>';
 			$body .= '<p><font size="3" face="Arial" color="#006699">&iexcl;Tu registro a las <em>Jornadas de Capacitaci&oacute;n 2015</em> se ha realizado con &eacute;xito!</font></p>';
 			$body .= '<p><font size="3" face="Arial" color="#006699">Adjunto encontrar&aacute;s tu comprobante de registro, en el que se te indica la forma de realizar las evaluaciones y as&iacute; obtener la constancia de asistencia a las Jornadas. As&iacute; mismo, se enlistan las capacitaciones que seleccionaste.</p>';
+			$body .= '<p><font size="3" face="Arial" color="#006699">Recuerda llevar tu computadora o tableta electrónica</font></p>';
 			$body .= '<p><font size="3" face="Arial" color="#FF0000">En caso de alguna duda, por favor comun&iacute;cate al tel&eacute;fono (55) 5322 7700 ext. 4020 a 4026</font></p>';
 			$body .= '<table width="100%" border="1" cellspacing="0" cellpadding="10" border="0" bordercolor="#FFFFFF"><tr><td bgcolor="#e0e0e0" align="center"><font size="3" face="Arial" color="#005199"><strong>Consejo Nacional de Ciencia y Tecnolog&iacute;a (CONACYT)</strong></font></td></tr></table>';
 			
