@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container { border:#C3C3C3 1px solid; box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.5);}
+
+nav.navbar {margin-top: 20px;}
+
+.navbar-default {border:red 0px solid;  background: -webkit-linear-gradient( #5ea8dc, #002b65); background: -moz-linear-gradient( #5ea8dc, #002b65); background: -o-linear-gradient( #5ea8dc, #002b65); padding-bottom:0px; margin-bottom:0px;}
+
+.navbar-toggle { position:relative; float:left; background-color:#CCC; margin-left:15px;}
+
+.formulario { background:rgba(153,153,153,0.8); border-bottom:#666 2px solid;}
+
+.navbar-default .navbar-brand{color:#FFF}
+
+.navbar-default .navbar-nav>li>a{color:#FFF}
+
+.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#F90;background-color:transparent}
+
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{color:#039; background-color: #FFF; opacity: 0.7; filter:  alpha(opacity=70);}
+
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+#header-pleca-superior{position:relative; float:left; min-height:10px; min-width:100%; background-color:#2659af;}
+
+img{position:relative; margin:0 auto;}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+
+#header-logo1{position:relative; float:left; top:10px; width:100%; max-width:120px; border:orange 0px solid;  }
+
+#header-logo2{position:relative; top:15px;  margin:0 auto;  width:100%; max-width:380px; border:orange 0px solid;   }
+
+#header-logo3{ position:relative; float:right; top:10px; right:0px; width:100%; max-width:96px;  border:orange 0px solid;  }
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+
+#banner-fondo{position:relative; top:0px;  width:100%; height:auto; border:yellow 0px solid; background-color:transparent;  z-index:0; }
+
+#banner-redes{position:absolute; bottom:2px; right:5px; min-width:150px; max-width:150px; border:red 0px solid;}
+
+.banner-redes-img { position:relative; float:left;  max-height:30px; max-width:30px; overflow:hidden; cursor:pointer; border:red 0px solid; margin:1px;}
+
+/*  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+#banner-login{ position:relative; display:block;  top:0px;  left:0px;  height:auto;   min-width:100%; max-width:100%; color:#FFF; text-align:right; z-index:3;margin:4px 4px 0; padding-right:10px; font-size:12px;   }
+
+#banner-login-2 {padding-right: 10px;}
+
+#banner-login-2 input{ position:relative; top:0px; margin: 0 2px; -webkit-border-radius:8px 8px 8px 8px; -moz-border-radius: 8px 8px 8px 8px; border-radius: 8px 8px 8px 8px; border:#666666 1px solid; color: #353535;}
+
+#banner-login-2 label {color: #003366; font-weight: normal;}
+
+#banner-login-2 label:nth-of-type(2) {margin-left: 12px;}
+
+#enviar { color:#06C;}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+.contenido {margin-top: 40px;}
+
+.contenido-titulo{font-family: 'Scada', Verdana, sans-serif;  width:100%; height:auto; border:orange 0px solid;   margin:0px; top:0px; padding:5px 10px;  font-size:22px; font-weight:bold;  color:#1f3d6e;  }
+
+.contenido-titulo2{height:auto;  font-family: 'Scada', Verdana, sans-serif; font-weight:700; margin:0px; top:0px; padding:5px 10px; font-size:18px; font-weight:bold;  color:#1f3d6e;}
+
+.contenido-mundo{ position:absolute; right:-50px; top:-30px;   }
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+#footer {margin-top: 30px;}
+
+.foot{ background: -webkit-linear-gradient(#FFF, #ccc); background: -moz-linear-gradient(#FFF, #ccc); background: -o-linear-gradient(#FFF, #ccc); margin-top:25px; border-bottom:#999 10px solid;}
+
+#foot-logos { position:relative;  margin:0 auto; max-width:800px; min-height:50px;  border:red 0px solid; }
+
+.footer-img{ position:relative; max-height:100%;  margin:5px 20px;  }
+
+#foot-texto{position:relative; width:100%; padding-bottom: 8px; text-align:center; font-size:10px; color:#666;}
+
+#foot-texto > p {margin-bottom: 15px;}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+
+
+/* Pagina Jornadas &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&   */ 
+.jornada-titulo {position:relative; width:100%; padding:5px; text-align:center; background-color:#063; color:#FFF; font-size:14px; font-weight:bold; -webkit-border-radius:8px 8px 8px 8px; -moz-border-radius: 8px 8px 8px 8px; border-radius: 8px 8px 8px 8px;}
+
+.jornadas-caja { position:relative; height:auto; border:#666 2px solid; -moz-border-radius:8px 8px 8px 8px; -webkit-border-radius:8px 8px 8px 8px; border-radius:8px 8px 8px 8px;}
+
+.jornadas-caja-titulo {position:relative; float:left; width:100%; height:auto; max-height:60px; background: #039; color:#FFF; line-height:25px; font-weight:bold;  border:orange 0px solid; -moz-border-radius:7px 7px 0px 0px; -webkit-border-radius:7px 7px 0px 0px; border-radius:7px 7px 0px 0px; }
+
+.jornadas-caja-titulo2 {position:relative; float:left; padding-left:10px; padding-right:10px;}
+
+.jornadas-anidada1{height:140px;}
+
+.jornadas-anidada1-img1 { position:relative; float:left; display:block;   width:100%; max-width:120px; margin:10px;}
+.jornadas-anidada1-img2 { position:relative; float:left; display:block;   width:100%; max-width:70px; margin:10px;}
+
+.jornadas-anidada2 {font-size:12px; border:orange 0px solid; padding-top:10px;}
+
+.jornadas-fecha{ background-color:#09F; font-weight:bold; color:#FFF; font-size:12px; padding:2px; text-align:center; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+
+.jornadas-lugar {font-weight:bold; color:#039;}
+
+.jornadas-boton1 {position:relative; float:left; width:80px; font-weight:bold; color:#000; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; background-color:#FC6; padding:2px 5px; border:#999 2px solid; box-shadow: 3px 3px 3px #888888; margin:5px; font-size:12px; text-align:center;}
+
+.jornadas-boton2 { position:relative; visibility:hidden; float:left; width:80px; font-weight:bold; color:#FFF; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; background-color:#C60; padding:2px 5px; cursor:pointer; border:#999 2px solid; box-shadow: 3px 3px 3px #888888; margin:5px; font-size:12px; text-align:center;}
+
+.jornadas-anidada3 {border:green 0px solid; padding-top:10px;}
+/* Fin Pagina Jornadas &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&   */ 
+
+
+
+
+/* Estilos del formulario */
+.region {
+	border: 2px #F8B149 solid !important;
+	border-radius: 8px;
+}
+
+.region .panel-heading {
+	background-color: #F8B149;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.region .panel-heading h3 {
+	margin-top: 10px;
+	font-size: 24px;
+}
+
+.region .panel-body {
+	padding: 16px 24px 0;
+}
+
+.region .panel-body p, .region .panel-body .tipo-institucion, .div-sede label {
+	padding-left: 8px;
+}
+
+.region .div-sede, .region .nombre-sede {
+	position: relative;
+}
+
+.region .div-sede:not(:last-of-type) {
+	border-bottom: 1px #F8B149 solid;
+	padding-bottom: 5px;
+}
+
+.div-sede label {
+    display: block;
+    margin-top: -5px;
+    font-weight: normal;
+}
+
+.region .regCursosSin img {
+	position: absolute;
+	right: 15px;
+}
+
+.region .regCursos img {
+	position: absolute;
+	right: 15px;
+	cursor: pointer;
+}
+/* Fin estilos del formulario */
+
+
+/* Estilos propios */
+
+/* Autocompletar */
+#scrollable-dropdown-menu .tt-dropdown-menu {
+	max-height: 150px;
+	overflow-y: auto;
+}
+
+.twitter-typeahead{
+     width: 100%;
+}
+
+.tt-dropdown-menu{
+    width: 100%;
+	margin-top: 10px;
+	padding: 10px 0 10px 20px;
+	background-color: #FFFFFF;
+	border: 1px #CCCCCC solid;
+	border-radius: 4px;
+}
+
+.region {
+	border: 1px #999 solid;
+	display: none;
+}
