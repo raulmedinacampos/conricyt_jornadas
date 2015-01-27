@@ -10,7 +10,19 @@ class Reporte extends CI_Controller {
 	}
 	
 	public function por_sede() {
-		$data['total'] = $this->reporte->getTotalUsers();
+		$arregloDatos = array();
+		$sedes = $this->reporte->listarSedes();
+		$sedes = $sedes->result();
+		
+		foreach($sedes as $sede) {
+			$datos = new stdClass();
+			$datos->sede = $sede->evento;
+			$datos->registrados = $this->reporte->obtenerRegistradosPorSede($sede->id_evento);
+			$arregloDatos[] = $datos;
+		}
+		
+		$data['datos'] = $arregloDatos;
+		$data['total'] = $this->reporte->obtenerTotalUsuarios();
 		
 		$this->load->view("header");
 		$this->load->view("reportes/sede", $data);
