@@ -16,6 +16,7 @@ class Reporte extends CI_Controller {
 		
 		foreach($sedes as $sede) {
 			$datos = new stdClass();
+			$datos->id = $sede->id_evento;
 			$datos->sede = $sede->evento;
 			$datos->registrados = $this->reporte->obtenerRegistradosPorSede($sede->id_evento);
 			$arregloDatos[] = $datos;
@@ -26,6 +27,33 @@ class Reporte extends CI_Controller {
 		
 		$this->load->view("header");
 		$this->load->view("reportes/sede", $data);
+		$this->load->view("footer");
+	}
+	
+	public function por_institucion() {
+		$id = $this->uri->segment(3);
+		settype($id, "int");
+		
+		$arregloDatos = array();
+		$instituciones = $this->reporte->listarInstitucionesPorSede($id);
+		
+		if($instituciones) {
+			$instituciones = $instituciones->result();
+			
+			foreach($instituciones as $institucion) {
+				$datos = new stdClass();
+				$datos->institucion = $institucion->institucion;
+				$datos->registrados = $this->reporte->obtenerRegistradosPorInstitucionSede($institucion->institucion, $id);
+				$arregloDatos[] = $datos;
+			}
+		}
+		
+		$data['datos'] = $arregloDatos;		
+		$data['sede'] = $this->reporte->consultarSedePorId($id);
+		$data['total'] = $this->reporte->obtenerTotalUsuariosPorSede($id);
+		
+		$this->load->view("header");
+		$this->load->view("reportes/institucion", $data);
 		$this->load->view("footer");
 	}
 }

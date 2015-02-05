@@ -4,23 +4,22 @@
 		<div class="contenido-mundo">
 			<img src="<?php echo base_url('images/mundo.png'); ?>">
 		</div>
-		<div class="contenido-titulo">Registros por institución</div>
+		<div class="contenido-titulo"><?php echo $sede->evento; ?></div>
 		<table class="table table-condensed table-striped">
 			<tbody>
 				<tr>
 					<th>#</th>
-					<th>Sede</th>
+					<th>Institución</th>
 					<th>Registrados</th>
 				</tr>
     			<?php
 				$i = 1;
 				
 				foreach ( $datos as $dato ) {
-					$colorFila = ($dato->registrados < 20) ? "danger" : "";
 				?>
-    			<tr class="<?php echo $colorFila; ?>">
+    			<tr>
 					<th><?php echo $i; ?></th>
-					<td><a href="<?php echo base_url('reporte/por_institucion/'.$dato->id)?>"><?php echo $dato->sede; ?></a></td>
+					<td><?php echo $dato->institucion; ?></td>
 					<td><?php echo $dato->registrados; ?></td>
 				</tr>
     			<?php
