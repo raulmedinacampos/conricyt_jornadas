@@ -88,9 +88,11 @@ class Registro_model extends CI_Model {
 	public function getInstitutionsType() {
 		$this->db->select('e.region, cti.id_tipo_institucion, cti.tipo_institucion');
 		$this->db->from('ubicacion_evento ue');
+		$this->db->join('evento ev', 'ue.id_ubicacion_evento = ev.ubicacion_evento');
 		$this->db->join('institucion i', 'ue.institucion = i.id_institucion');
 		$this->db->join('entidad e', 'ue.entidad = e.id_entidad');
 		$this->db->join('cat_tipo_institucion cti', 'i.tipo_institucion = cti.id_tipo_institucion');
+		$this->db->where('ev.estatus', 1);
 		$this->db->group_by('e.region, cti.id_tipo_institucion');
 		$query = $this->db->get();
 		
