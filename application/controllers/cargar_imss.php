@@ -27,9 +27,9 @@ class Cargar_imss extends CI_Controller {
 			//$id_usuario = $result_usuario->row();
 			//$id_usuario = $id_usuario->id_usuario;
 			
-			//$query_actualizar = "UPDATE usuario SET fecha_modificacion = '$time', username = '$row->username', password = '$row->password' WHERE id_usuario = $id_usuario";
-			//$this->db->query($query_actualizar);
-			//echo $query_actualizar."<br />";
+			/*$query_actualizar = "UPDATE usuario SET fecha_modificacion = '$time', username = '$row->username', password = '$row->password' WHERE id_usuario = $id_usuario";
+			$this->db->query($query_actualizar);
+			echo $query_actualizar."<br />";*/
 			
 			$query_programa = "INSERT INTO usuario_programa VALUES($id_usuario, 2, '$time', 0, 2)";
 			$this->db->query($query_programa);
