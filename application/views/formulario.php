@@ -302,10 +302,16 @@ echo '<div class="camposOcultos">';
 							
 							if($fecha > date('Y-m-d')) {
 								echo '<span class="'.$claseFlecha.'" data-evento="'.$val->id_evento.'"><img src="'.base_url('images/flecha.png').'" /></span>';
-							} else {
-								echo '<strong><em>Registro cerrado</em></strong>';
 							}
-						}
+							
+							if($val->estatus == 2) {
+								echo '<span class="regCursosSin" data-evento="'.$val->id_evento.'"><img src="'.base_url('images/boton_acceso.png').'" /></span>';
+							}
+
+							if($val->estatus == 3 || $fecha < date('Y-m-d')) {
+								echo '<span class="regCursosSin" data-evento="'.$val->id_evento.'"><img src="'.base_url('images/boton_fecha.png').'" /></span>';
+							}
+                        }
                         ?>
                         </p>
 						<p class="info-sede">

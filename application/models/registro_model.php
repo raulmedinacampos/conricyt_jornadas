@@ -60,12 +60,12 @@ class Registro_model extends CI_Model {
 	}
 	
 	public function getEventsByRegion() {
-		$this->db->select('e.id_evento, e.evento, ue.ubicacion, e.descripcion, e.inicio, e.fin, e.ubicacion_evento, i.tipo_institucion, en.region');
+		$this->db->select('e.id_evento, e.evento, ue.ubicacion, e.descripcion, e.inicio, e.fin, e.ubicacion_evento, i.tipo_institucion, en.region, e.estatus');
 		$this->db->from('evento e');
 		$this->db->join('ubicacion_evento ue', 'e.ubicacion_evento = ue.id_ubicacion_evento');
 		$this->db->join('institucion i', 'ue.institucion = i.id_institucion');
 		$this->db->join('entidad en', 'ue.entidad = en.id_entidad');
-		$this->db->where('e.estatus', 1);
+		$this->db->where('e.estatus >=', 1);
 		$query = $this->db->get();
 		
 		if($query->num_rows() > 0) {
@@ -92,7 +92,7 @@ class Registro_model extends CI_Model {
 		$this->db->join('institucion i', 'ue.institucion = i.id_institucion');
 		$this->db->join('entidad e', 'ue.entidad = e.id_entidad');
 		$this->db->join('cat_tipo_institucion cti', 'i.tipo_institucion = cti.id_tipo_institucion');
-		$this->db->where('ev.estatus', 1);
+		$this->db->where('ev.estatus >=', 1);
 		$this->db->group_by('e.region, cti.id_tipo_institucion');
 		$query = $this->db->get();
 		

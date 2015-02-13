@@ -84,7 +84,7 @@
 			}
 		}
 		
-		private function crearComprobante($id_usuario) {
+		private function crearComprobante($id_usuario, $consulta = "") {
 			$data = $this->registro->getRegisterByUser($id_usuario);
 			$evento = $this->registro->getEventByUser($id_usuario);
 			$capacitaciones = $this->registro->getCoursesByUser($id_usuario);
@@ -162,9 +162,19 @@
 			$pdf->WriteHTML($stylesheet, 1);
 			$pdf->WriteHTML(utf8_encode($html));
 
-			//$pdf->Output();
-			$contenido_pdf = $pdf->Output(utf8_encode('Comprobante de registro.pdf'), 'S');
-			return $contenido_pdf;
+			if($consulta) {
+				$pdf->Output();
+			} else {
+				$contenido_pdf = $pdf->Output(utf8_encode('Comprobante de registro.pdf'), 'S');
+				return $contenido_pdf;
+			}
+		}
+		
+		public function comprobante() {
+			$id_usuario = $this->uri->segment(3);
+			settype($id_usuario, "int");
+			
+			$this->crearComprobante($id_usuario, "consulta");
 		}
 		
 		private function enviarCorreo($id_usuario, $correo, $remitente, $asunto, $body) {
@@ -238,6 +248,7 @@
 				$this->registro->updateUser($id_usuario, $usuario);
 			} else {
 				// Inserta nuevo usuario
+				$usuario['fecha_alta'] = date('Y-m-d H:i:s');
 				$usuario['folio'] = $this->generarFolio();
 				$id_usuario = $this->registro->insertUser($usuario);
 			}
