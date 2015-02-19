@@ -300,7 +300,7 @@ echo '<div class="camposOcultos">';
 								$claseFlecha = "regCursosSin";
 							}
 							
-							if($fecha > date('Y-m-d')) {
+							if($val->estatus == 1 || $fecha > date('Y-m-d')) {
 								echo '<span class="'.$claseFlecha.'" data-evento="'.$val->id_evento.'"><img src="'.base_url('images/flecha.png').'" /></span>';
 							}
 							
