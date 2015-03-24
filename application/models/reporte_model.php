@@ -95,5 +95,52 @@ class Reporte_model extends CI_Model {
 			return $query->row();
 		}
 	}
+	
+	public function consultarRegistradosPorSede($sede) {
+		$this->db->select("u.id_usuario, u.nombre, u.ap_paterno, u.ap_materno, u.correo, u.institucion");
+		$this->db->from("usuario_programa up");
+		$this->db->join("usuario u", "up.usuario = u.id_usuario");
+		$this->db->join("usuario_evento ue", "ue.usuario = u.id_usuario");
+		$this->db->join("evento e", "e.id_evento = ue.evento");
+		$this->db->where("e.id_evento", $sede);
+		$this->db->where("up.programa", 2);
+		$this->db->where("up.estatus", 1);
+		$this->db->where('u.estatus', 1);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return $query;
+		}
+	}
+	
+	public function consultarRegistradosPorEditorial($sede) {
+		$this->db->select("r.recurso, COUNT(*) AS total", FALSE);
+		$this->db->from("recurso r");
+		$this->db->join("usuario_recurso ur", "r.id_recurso = ur.recurso");
+		$this->db->join("usuario u", "ur.usuario = u.id_usuario");
+		$this->db->join("usuario_evento ue", "u.id_usuario = ue.usuario");
+		$this->db->where("ue.evento", $sede);
+		$this->db->where('u.estatus', 1);
+		$this->db->group_by("r.recurso");
+		$this->db->order_by("r.recurso");
+		$query = $this->db->get();
+	
+		if($query->num_rows() > 0) {
+			return $query;
+		}
+	}
+	
+	public function consultarCapacitacionesPorUsuario($usuario) {
+		$this->db->select('r.recurso');
+		$this->db->from('recurso r');
+		$this->db->join('usuario_recurso ur', 'r.id_recurso = ur.recurso');
+		$this->db->where('ur.usuario', $usuario);
+		$this->db->where('r.estatus', 1);
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return $query;
+		} 
+	}
 }
 ?>

@@ -10,6 +10,9 @@
 				<tr>
 					<th>#</th>
 					<th>Sede</th>
+					<th>Por instituciones</th>
+					<th>Por editoriales</th>
+					<th>Datos registrados</th>
 					<th>Registrados</th>
 				</tr>
     			<?php
@@ -20,7 +23,10 @@
 				?>
     			<tr class="<?php echo $colorFila; ?>">
 					<th><?php echo $i; ?></th>
-					<td><a href="<?php echo base_url('reporte/por_institucion/'.$dato->id)?>"><?php echo $dato->sede; ?></a></td>
+					<td><?php echo $dato->sede; ?></td>
+					<td><a href="<?php echo base_url('reporte/por_institucion/'.$dato->id)?>">Ver reporte</a></td>
+					<td><a href="<?php echo base_url('reporte/por_editorial/'.$dato->id)?>">Ver reporte</a></td>
+					<td><a href="<?php echo base_url('reporte/por_usuario/'.$dato->id)?>">Ver reporte</a></td>
 					<td><?php echo $dato->registrados; ?></td>
 				</tr>
     			<?php
@@ -30,7 +36,7 @@
   		</tbody>
 			<tfoot>
 				<tr class="info">
-					<th colspan="2">Total</th>
+					<th colspan="5">Total</th>
 					<th><?php echo $total; ?></th>
 				</tr>
 			</tfoot>
