@@ -130,6 +130,22 @@ class Reporte_model extends CI_Model {
 		}
 	}
 	
+	public function consultarRegistradosPorPerfil($sede) {
+		$this->db->select("cp.perfil, COUNT(*) AS total", FALSE);
+		$this->db->from("cat_perfil cp");
+		$this->db->join("usuario u", "cp.id_perfil = u.id_perfil");
+		$this->db->join("usuario_evento ue", "u.id_usuario = ue.usuario");
+		$this->db->where("ue.evento", $sede);
+		$this->db->where('u.estatus', 1);
+		$this->db->group_by("u.id_perfil");
+		$this->db->order_by("cp.perfil");
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0) {
+			return $query;
+		}
+	}
+	
 	public function consultarCapacitacionesPorUsuario($usuario) {
 		$this->db->select('r.recurso');
 		$this->db->from('recurso r');

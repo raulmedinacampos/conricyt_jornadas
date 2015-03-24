@@ -66,6 +66,18 @@ class Reporte extends CI_Controller {
 		$this->load->view("footer");
 	}
 	
+	public function por_perfil() {
+		$id = $this->uri->segment(3);
+		settype($id, "int");
+	
+		$data['registros'] = $this->reporte->consultarRegistradosPorPerfil($id);
+		$data['sede'] = $this->reporte->consultarSedePorId($id);
+	
+		$this->load->view("header");
+		$this->load->view("reportes/perfil", $data);
+		$this->load->view("footer");
+	}
+	
 	public function por_usuario() {
 		$id = $this->uri->segment(3);
 		settype($id, "int");
