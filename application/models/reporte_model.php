@@ -62,7 +62,7 @@ class Reporte_model extends CI_Model {
 		$this->db->join("evento e", "e.id_evento = ue.evento");
 		$this->db->where("e.id_evento", $sede);
 		$this->db->where("up.programa", 2);
-		$this->db->where("up.estatus", 1);
+		$this->db->where("up.estatus >", 0);
 		$query = $this->db->get();
 		
 		$total = $query->row();
