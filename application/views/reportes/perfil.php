@@ -14,6 +14,7 @@
 				</tr>
     			<?php
 				$i = 1;
+				$total = 0;
 				
 				foreach ( $registros->result() as $registo ) {
 				?>
@@ -23,9 +24,14 @@
 					<td><?php echo $registo->total; ?></td>
 				</tr>
     			<?php
-					$i ++;
+					$i++;
+					$total += $registo->total;
 				}
 				?>
+				<tr class="info">
+					<th colspan="2">Total</th>
+					<td><?php echo $total; ?></td>
+				</tr>
   			</tbody>
 		</table>
 	</div>
