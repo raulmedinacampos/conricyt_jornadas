@@ -12,7 +12,7 @@ class Administracion extends CI_Controller {
 		$this->load->database();
 		
 		$this->db = $this->load->database('default', TRUE);
-		$correo = "enriqueta_velazquez@utcj.edu.mx";
+		$correo = "investigacion.itszo@gmail.com";
 		
 		$query_usuario = "SELECT id_usuario FROM usuario WHERE correo = '$correo' AND estatus = 1";
 		$result_usuario = $this->db->query($query_usuario);
@@ -27,7 +27,7 @@ class Administracion extends CI_Controller {
 		
 		$query_programa = "DELETE FROM usuario_programa WHERE programa = 2 AND usuario = $id_usuario";
 		echo $query_programa."<br/>";
-		//$this->db->query($query_programa);
+		$this->db->query($query_programa);
 		
 		$query_evento = "SELECT e.abreviatura, ue.evento FROM usuario_evento ue 
 							JOIN evento e ON ue.evento = e.id_evento 
@@ -39,16 +39,16 @@ class Administracion extends CI_Controller {
 		
 		$query_evento = "DELETE FROM usuario_evento WHERE evento = $evento->evento AND usuario = $id_usuario";
 		echo $query_evento."<br/>";
-		//$this->db->query($query_evento);
+		$this->db->query($query_evento);
 		
 		$query_recurso = "DELETE FROM usuario_recurso WHERE usuario = $id_usuario";
 		echo $query_recurso."<br/>";
-		//$this->db->query($query_recurso);
+		$this->db->query($query_recurso);
 		
 		if($total == 1) {
 			$query_borrar = "DELETE FROM usuario WHERE id_usuario = $id_usuario";
 			echo $query_borrar."<br/>";
-			//$this->db->query($query_borrar);
+			$this->db->query($query_borrar);
 		}
 		
 		$this->db = $this->load->database('moodle', TRUE);
@@ -81,16 +81,16 @@ class Administracion extends CI_Controller {
 		
 		$query_matricular = "DELETE FROM mdl_user_enrolments WHERE enrolid = $id_enrol->id AND userid = $usuario_moodle";
 		echo $query_matricular."<br/>";
-		//$this->db->query($query_matricular);
+		$this->db->query($query_matricular);
 		
 		$query_rol = "DELETE FROM mdl_role_assignments WHERE contextid = $id_contexto->id AND userid = $usuario_moodle";
 		echo $query_rol."<br/>";
-		//$this->db->query($query_rol);
+		$this->db->query($query_rol);
 		
 		if($total_m == 1) {
 			$query_borrar = "DELETE FROM mdl_user WHERE id = $usuario_moodle";
 			echo $query_borrar."<br/>";
-			//$this->db->query($query_borrar);
+			$this->db->query($query_borrar);
 		}
 	}
 }
