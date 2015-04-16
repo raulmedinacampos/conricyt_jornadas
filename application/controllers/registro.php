@@ -163,7 +163,7 @@
 			$pdf->WriteHTML(utf8_encode($html));
 
 			if($consulta) {
-				$pdf->Output();
+				$pdf->Output('comprobante_jornadas.pdf', 'D');
 			} else {
 				$contenido_pdf = $pdf->Output(utf8_encode('Comprobante de registro.pdf'), 'S');
 				return $contenido_pdf;
